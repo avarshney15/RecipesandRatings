@@ -8,7 +8,7 @@ The recipes dataset has 83782 rows with the following 12 columns:<br>
 <iframe
   src="assets/recipes-table.html"
   width="700"
-  height="500"
+  height="450"
   frameborder="0"
 ></iframe> 
 
@@ -16,7 +16,7 @@ The second dataset, interactions, has 731927 rows with the following 5 columns:<
 <iframe
   src="assets/interactions-table.html"
   width="700"
-  height="500"
+  height="300"
   frameborder="0"
 ></iframe> 
 
