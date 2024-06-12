@@ -81,18 +81,18 @@ The scatterplot above, shows the distribution of the number of steps taken, brok
 The bar graph above, shows the average time taken for recipes to be made versus the rating recieved. We can see that the average time taken to produce a recipe with rating 1 alomost takes the same amount of time as producing a recipe with rating 5, with the difference between the two being only 6.9 minutes. What's interesting is that 87.4 minutes to create a recipe with rating 3 and 91.5  to create a recipe with rating 4. 
 
 ### Interesting Aggregates
-For this section, we grouped our data based on the 
+For this section, we grouped our data based on the number of steps and found the mean, median, 
 <iframe
   src="assets/interesting_agg_tail.html"
   width="1200" 
-  height="500"  
+  height="300"  
   frameborder="0"
   style="width: 100%; height: 100%; min-width: 1200px; min-height: 600px;"  
 ></iframe>
 <iframe
   src="assets/interesting_agg_tail.html"
   width="1200" 
-  height="500"  
+  height="300"  
   frameborder="0"
   style="width: 100%; height: 100%; min-width: 1200px; min-height: 600px;"  
 ></iframe>
