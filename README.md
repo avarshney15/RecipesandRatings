@@ -53,3 +53,11 @@ For our univariate analysis, we examined the overall distribution of the ratings
   height="400"
   frameborder="0"
 ></iframe>  
+This histograms presents the distribution of rating of all recipes from 1 to 5, with the data largely skewing towards the right indicating that a large proportion of the recipes in the dataframe are given 4 and 5 stars, showing a high level of user statisfaction. 
+<iframe
+  src="assets/univariate-nsteps.html"
+  width="600"
+  height="400"
+  frameborder="0"
+></iframe>  
+This histograms presents the distribution of the number of steps of all recipes from 1 to 100, with the data largely skewing towards the left indicating that a large proportion of the recipes in the dataframe take less than 40 steps to make and only a handful of recipes take more than 60 steps, giving us further insight on thier difficult levels. 
