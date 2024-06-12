@@ -81,12 +81,26 @@ The scatterplot above, shows the distribution of the number of steps taken, brok
 The bar graph above, shows the average time taken for recipes to be made versus the rating recieved. We can see that the average time taken to produce a recipe with rating 1 alomost takes the same amount of time as producing a recipe with rating 5, with the difference between the two being only 6.9 minutes. What's interesting is that 87.4 minutes to create a recipe with rating 3 and 91.5  to create a recipe with rating 4. 
 
 ### Interesting Aggregates
-Some interesting aggregates we found were when we 
-
+For this section, we grouped our data based on the 
+<iframe
+  src="assets/interesting_agg_tail.html"
+  width="1200" 
+  height="500"  
+  frameborder="0"
+  style="width: 100%; height: 100%; min-width: 1200px; min-height: 600px;"  
+></iframe>
+<iframe
+  src="assets/interesting_agg_tail.html"
+  width="1200" 
+  height="500"  
+  frameborder="0"
+  style="width: 100%; height: 100%; min-width: 1200px; min-height: 600px;"  
+></iframe>
+<br>
 
 ## Assessment of Missingness
 In our merged dataframe, there were missing values in'rating', 'date' and 'review'. Of these 3 columns, 'rating' is the most relevant for our project, hence we will analyze the missingness of rating. 
 ### NMAR Analysis
-We believe that the missingness'review' is 
+We believe that the missingness 'review' is 
 
 ### Missingness Dependancy
