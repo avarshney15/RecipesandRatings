@@ -11,7 +11,7 @@ The recipes dataset has 83782 rows with the following 12 columns:<br>
   height="600"
   frameborder="0"
 ></iframe> 
-<br>
+
 The second dataset, interactions, has 731927 rows with the following 5 columns:<br>
 <iframe
   src="assets/interactions-table.html"
@@ -19,7 +19,7 @@ The second dataset, interactions, has 731927 rows with the following 5 columns:<
   height="600"
   frameborder="0"
 ></iframe> 
-<br>
+
 Based on these two datasets we will investigate the relationship between the difficulty in making a recipe and its rating, to identify easy to make recipes for college students which also taste good. The columns relevant to finding out the difficulty of a recipe are the number of steps, and the time taken to make the recipe. 
 
 ## Data Cleaning and Exploratory Data Analysis
