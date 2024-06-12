@@ -34,7 +34,133 @@ We took the following steps to clean and merge the recipes and interactions data
 8.  We also added another column 'avg_time_per_step' which divides the total number of minutes to the number of steps as there might be some recipes that have few steps, making it seem like they are easy to make but may take a lot of time. <br>
 
 After all of these steps, we had a dataframe with 234429 rows and 26 columns:<br>
-"|    | name                                 |   recipe_id |   minutes | tags                                                                                                                                                                                                                        |   n_steps |   n_ingredients |   rating |   rating_average |   calories |   total_fat_PDV |   sugar_PDV |   sodium_PDV |   protein_PDV |   saturated_fat_PDV |   carbohydrates_PDV | difficulty   |   avg_time_per_step |\n|---:|:-------------------------------------|------------:|----------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------:|----------------:|---------:|-----------------:|-----------:|----------------:|------------:|-------------:|--------------:|--------------------:|--------------------:|:-------------|--------------------:|\n|  0 | 1 brownies in the world    best ever |      333281 |        40 | ['60-minutes-or-less', 'time-to-make', 'course', 'main-ingredient', 'preparation', 'for-large-groups', 'desserts', 'lunch', 'snacks', 'cookies-and-brownies', 'chocolate', 'bar-cookies', 'brownies', 'number-of-servings'] |        10 |               9 |        4 |                4 |      138.4 |              10 |          50 |            3 |             3 |                  19 |                   6 | Medium       |             4       |\n|  1 | 1 in canada chocolate chip cookies   |      453467 |        45 | ['60-minutes-or-less', 'time-to-make', 'cuisine', 'preparation', 'north-american', 'for-large-groups', 'canadian', 'british-columbian', 'number-of-servings']                                                               |        12 |              11 |        5 |                5 |      595.1 |              46 |         211 |           22 |            13 |                  51 |                  26 | Hard         |             3.75    |\n|  2 | 412 broccoli casserole               |      306168 |        40 | ['60-minutes-or-less', 'time-to-make', 'course', 'main-ingredient', 'preparation', 'side-dishes', 'vegetables', 'easy', 'beginner-cook', 'broccoli']                                                                        |         6 |               9 |        5 |                5 |      194.8 |              20 |           6 |           32 |            22 |                  36 |                   3 | Medium       |             6.66667 |\n|  3 | 412 broccoli casserole               |      306168 |        40 | ['60-minutes-or-less', 'time-to-make', 'course', 'main-ingredient', 'preparation', 'side-dishes', 'vegetables', 'easy', 'beginner-cook', 'broccoli']                                                                        |         6 |               9 |        5 |                5 |      194.8 |              20 |           6 |           32 |            22 |                  36 |                   3 | Medium       |             6.66667 |\n|  4 | 412 broccoli casserole               |      306168 |        40 | ['60-minutes-or-less', 'time-to-make', 'course', 'main-ingredient', 'preparation', 'side-dishes', 'vegetables', 'easy', 'beginner-cook', 'broccoli']                                                                        |         6 |               9 |        5 |                5 |      194.8 |              20 |           6 |           32 |            22 |                  36 |                   3 | Medium       |             6.66667 |"
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>name</th>
+      <th>recipe_id</th>
+      <th>minutes</th>
+      <th>tags</th>
+      <th>n_steps</th>
+      <th>n_ingredients</th>
+      <th>rating</th>
+      <th>rating_average</th>
+      <th>calories</th>
+      <th>total_fat_PDV</th>
+      <th>sugar_PDV</th>
+      <th>sodium_PDV</th>
+      <th>protein_PDV</th>
+      <th>saturated_fat_PDV</th>
+      <th>carbohydrates_PDV</th>
+      <th>difficulty</th>
+      <th>avg_time_per_step</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>1 brownies in the world best ever</td>
+      <td>333281</td>
+      <td>40</td>
+      <td>['60-minutes-or-less', 'time-to-make', 'course', 'main-ingredient', 'preparation', 'for-large-groups', 'desserts', 'lunch', 'snacks', 'cookies-and-brownies', 'chocolate', 'bar-cookies', 'brownies', 'number-of-servings']</td>
+      <td>10</td>
+      <td>9</td>
+      <td>4</td>
+      <td>4</td>
+      <td>138.4</td>
+      <td>10</td>
+      <td>50</td>
+      <td>3</td>
+      <td>3</td>
+      <td>19</td>
+      <td>6</td>
+      <td>Medium</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>1 in canada chocolate chip cookies</td>
+      <td>453467</td>
+      <td>45</td>
+      <td>['60-minutes-or-less', 'time-to-make', 'cuisine', 'preparation', 'north-american', 'for-large-groups', 'canadian', 'british-columbian', 'number-of-servings']</td>
+      <td>12</td>
+      <td>11</td>
+      <td>5</td>
+      <td>5</td>
+      <td>595.1</td>
+      <td>46</td>
+      <td>211</td>
+      <td>22</td>
+      <td>13</td>
+      <td>51</td>
+      <td>26</td>
+      <td>Hard</td>
+      <td>3.75</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>412 broccoli casserole</td>
+      <td>306168</td>
+      <td>40</td>
+      <td>['60-minutes-or-less', 'time-to-make', 'course', 'main-ingredient', 'preparation', 'side-dishes', 'vegetables', 'easy', 'beginner-cook', 'broccoli']</td>
+      <td>6</td>
+      <td>9</td>
+      <td>5</td>
+      <td>5</td>
+      <td>194.8</td>
+      <td>20</td>
+      <td>6</td>
+      <td>32</td>
+      <td>22</td>
+      <td>36</td>
+      <td>3</td>
+      <td>Medium</td>
+      <td>6.66667</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>412 broccoli casserole</td>
+      <td>306168</td>
+      <td>40</td>
+      <td>['60-minutes-or-less', 'time-to-make', 'course', 'main-ingredient', 'preparation', 'side-dishes', 'vegetables', 'easy', 'beginner-cook', 'broccoli']</td>
+      <td>6</td>
+      <td>9</td>
+      <td>5</td>
+      <td>5</td>
+      <td>194.8</td>
+      <td>20</td>
+      <td>6</td>
+      <td>32</td>
+      <td>22</td>
+      <td>36</td>
+      <td>3</td>
+      <td>Medium</td>
+      <td>6.66667</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>412 broccoli casserole</td>
+      <td>306168</td>
+      <td>40</td>
+      <td>['60-minutes-or-less', 'time-to-make', 'course', 'main-ingredient', 'preparation', 'side-dishes', 'vegetables', 'easy', 'beginner-cook', 'broccoli']</td>
+      <td>6</td>
+      <td>9</td>
+      <td>5</td>
+      <td>5</td>
+      <td>194.8</td>
+      <td>20</td>
+      <td>6</td>
+      <td>32</td>
+      <td>22</td>
+      <td>36</td>
+      <td>3</td>
+      <td>Medium</td>
+      <td>6.66667</td>
+    </tr>
+  </tbody>
+</table>
+
 
 
 
