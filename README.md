@@ -65,7 +65,7 @@ This histograms presents the distribution of the number of steps of all recipes 
 ### Bivariate Analysis
 For our bivariate analysis, we examined the relationship between the number of steps and the rating to identify any trends between the two variables using a scatterplot. We also plotted a bar chart between the ratings and the average time taken to prepare recipes with that rating. 
 <iframe
-  src="assets/bivariate-nstepsandrating.html.html"
+  src="assets/bivariate-nstepsandrating.html"
   width="600"
   height="400"
   frameborder="0"
