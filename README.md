@@ -87,14 +87,14 @@ For this section, we grouped our data based on the number of steps and found the
   width="1200" 
   height="300"  
   frameborder="0"
-  style="width: 100%; height: 100%; min-width: 1200px; min-height: 600px;"  
+  style="width: 100%; height: 100%; min-width: 1000px; min-height: 300px;"  
 ></iframe>
 <iframe
   src="assets/interesting_agg_tail.html"
   width="1200" 
   height="300"  
   frameborder="0"
-  style="width: 100%; height: 100%; min-width: 1200px; min-height: 600px;"  
+  style="width: 100%; height: 100%; min-width: 1000px; min-height: 300px;"  
 ></iframe>
 <br>
 
