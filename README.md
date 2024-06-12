@@ -8,7 +8,7 @@ The recipes dataset has 83782 rows with the following 12 columns:<br>
 <iframe
   src="assets/recipes-table.html"
   width="700"
-  height="600"
+  height="300"
   frameborder="0"
 ></iframe> 
 
