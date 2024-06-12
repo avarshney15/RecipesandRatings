@@ -34,73 +34,7 @@ We took the following steps to clean and merge the recipes and interactions data
 8.  We also added another column 'avg_time_per_step' which divides the total number of minutes to the number of steps as there might be some recipes that have few steps, making it seem like they are easy to make but may take a lot of time. <br>
 
 After all of these steps, we had a dataframe with 234429 rows and 26 columns:<br>
-<table>
-  <thead>
-    <tr>
-      <th>|</th>
-      <th>name</th>
-      <th>recipe_id</th>
-      <th>minutes</th>
-      <th>contributor_id</th>
-      <th>submitted</th>
-      <th>tags</th>
-      <th>nutrition</th>
-      <th>n_steps</th>
-      <th>steps</th>
-      <th>description</th>
-      <th>ingredients</th>
-      <th>n_ingredients</th>
-      <th>user_id</th>
-      <th>date</th>
-      <th>rating</th>
-      <th>review</th>
-      <th>rating_average</th>
-      <th>calories</th>
-      <th>total_fat_PDV</th>
-      <th>sugar_PDV</th>
-      <th>sodium_PDV</th>
-      <th>protein_PDV</th>
-      <th>saturated_fat_PDV</th>
-      <th>carbohydrates_PDV</th>
-      <th>difficulty</th>
-      <th>avg_time_per_step</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td>1 brownies in the world best ever</td>
-      <td>333281</td>
-      <td>40</td>
-      <td>985201</td>
-      <td>2008-10-27</td>
-      <td>['60-minutes-or-less', 'time-to-make', 'course', 'main-ingredient', 'preparation', 'for-large-groups', 'desserts', 'lunch', 'snacks', 'cookies-and-brownies', 'chocolate', 'bar-cookies', 'brownies', 'number-of-servings']</td>
-      <td>[138.4, 10.0, 50.0, 3.0, 3.0, 19.0, 6.0]</td>
-      <td>10</td>
-      <td>['heat the oven to 350f and arrange the rack in the middle', 'line an 8-by-8-inch glass baking dish with aluminum foil', 'combine chocolate and butter in a medium saucepan and cook over medium-low heat , stirring frequently , until evenly melted', 'remove from heat and let cool to room temperature', 'combine eggs , sugar , cocoa powder , vanilla extract , espresso , and salt in a large bowl and briefly stir until just evenly incorporated', 'add cooled chocolate and mix until uniform in color', 'add flour and stir until just incorporated', 'transfer batter to the prepared baking dish', 'bake until a tester inserted in the center of the brownies comes out clean , about 25 to 30 minutes', 'remove from the oven and cool completely before cutting']</td>
-      <td>these are the most; chocolatey, moist, rich, dense, fudgy, delicious brownies that you'll ever make.....sereiously! there's no doubt that these will be your fav brownies ever for you can add things to them or make them plain.....either way they're pure heaven!</td>
-      <td>['bittersweet chocolate', 'unsalted butter', 'eggs', 'granulated sugar', 'unsweetened cocoa powder', 'vanilla extract', 'brewed espresso', 'kosher salt', 'all-purpose flour']</td>
-      <td>9</td>
-      <td>386585</td>
-      <td>2008-11-19</td>
-      <td>4</td>
-      <td>These were pretty good, but took forever to bake. I would send it ended up being almost an hour! Even then, the brownies stuck to the foil, and were on the overly moist side and not easy to cut. They did taste quite rich, though! Made for My 3 Chefs.</td>
-      <td>4</td>
-      <td>138.4</td>
-      <td>10</td>
-      <td>50</td>
-      <td>3</td>
-      <td>3</td>
-      <td>19</td>
-      <td>6</td>
-      <td>Medium</td>
-      <td>4</td>
-    </tr>
-    <!-- Additional rows go here -->
-  </tbody>
-</table>
-
-
+"|    | name                                 |   recipe_id |   minutes | tags                                                                                                                                                                                                                        |   n_steps |   n_ingredients |   rating |   rating_average |   calories |   total_fat_PDV |   sugar_PDV |   sodium_PDV |   protein_PDV |   saturated_fat_PDV |   carbohydrates_PDV | difficulty   |   avg_time_per_step |\n|---:|:-------------------------------------|------------:|----------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------:|----------------:|---------:|-----------------:|-----------:|----------------:|------------:|-------------:|--------------:|--------------------:|--------------------:|:-------------|--------------------:|\n|  0 | 1 brownies in the world    best ever |      333281 |        40 | ['60-minutes-or-less', 'time-to-make', 'course', 'main-ingredient', 'preparation', 'for-large-groups', 'desserts', 'lunch', 'snacks', 'cookies-and-brownies', 'chocolate', 'bar-cookies', 'brownies', 'number-of-servings'] |        10 |               9 |        4 |                4 |      138.4 |              10 |          50 |            3 |             3 |                  19 |                   6 | Medium       |             4       |\n|  1 | 1 in canada chocolate chip cookies   |      453467 |        45 | ['60-minutes-or-less', 'time-to-make', 'cuisine', 'preparation', 'north-american', 'for-large-groups', 'canadian', 'british-columbian', 'number-of-servings']                                                               |        12 |              11 |        5 |                5 |      595.1 |              46 |         211 |           22 |            13 |                  51 |                  26 | Hard         |             3.75    |\n|  2 | 412 broccoli casserole               |      306168 |        40 | ['60-minutes-or-less', 'time-to-make', 'course', 'main-ingredient', 'preparation', 'side-dishes', 'vegetables', 'easy', 'beginner-cook', 'broccoli']                                                                        |         6 |               9 |        5 |                5 |      194.8 |              20 |           6 |           32 |            22 |                  36 |                   3 | Medium       |             6.66667 |\n|  3 | 412 broccoli casserole               |      306168 |        40 | ['60-minutes-or-less', 'time-to-make', 'course', 'main-ingredient', 'preparation', 'side-dishes', 'vegetables', 'easy', 'beginner-cook', 'broccoli']                                                                        |         6 |               9 |        5 |                5 |      194.8 |              20 |           6 |           32 |            22 |                  36 |                   3 | Medium       |             6.66667 |\n|  4 | 412 broccoli casserole               |      306168 |        40 | ['60-minutes-or-less', 'time-to-make', 'course', 'main-ingredient', 'preparation', 'side-dishes', 'vegetables', 'easy', 'beginner-cook', 'broccoli']                                                                        |         6 |               9 |        5 |                5 |      194.8 |              20 |           6 |           32 |            22 |                  36 |                   3 | Medium       |             6.66667 |"
 
 
 
