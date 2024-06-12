@@ -36,7 +36,8 @@ We took the following steps to clean and merge the recipes and interactions data
 After all of these steps, we had a dataframe with 234429 rows and 26 columns. To present the relevant data left, some columns have been removed to ensure neatness and maintain readability. Here are the first five rows of our merged dataframe:<br>
 <iframe
   src="assets/new-table-head.html"
-  width="700"
-  height="300"
+  width="1200" 
+  height="500"  
   frameborder="0"
-></iframe> 
+  style="width: 100%; height: 100%; min-width: 1200px; min-height: 600px;"  
+></iframe>
