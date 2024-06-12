@@ -61,3 +61,32 @@ This histograms presents the distribution of rating of all recipes from 1 to 5, 
   frameborder="0"
 ></iframe>  
 This histograms presents the distribution of the number of steps of all recipes from 1 to 100, with the data largely skewing towards the left indicating that a large proportion of the recipes in the dataframe take less than 40 steps to make and only a handful of recipes take more than 60 steps, giving us further insight on thier difficult levels. 
+
+### Bivariate Analysis
+For our bivariate analysis, we examined the relationship between the number of steps and the rating to identify any trends between the two variables using a scatterplot. We also plotted a bar chart between the ratings and the average time taken to prepare recipes with that rating. 
+<iframe
+  src="assets/bivariate-nstepsandrating.html.html"
+  width="600"
+  height="400"
+  frameborder="0"
+></iframe>  
+The scatterplot above, shows the distribution of the number of steps taken, broken down by the rating recieved form 1 to 5. From our univariate analysis we found out that a large proportion of the recipes take less than 40 steps to make, however, we can now see that recipes even with a low rating take less than 40 steps. Infact, as the rating increases, the number of steps also increases as there are a large number of recipes with a rating of 5 which take more than 40 steps while there are almost no recipes with a rating of 1 which taken more than 40 steps. 
+
+<iframe
+  src="assets/bivariate-boxgraph.html"
+  width="600"
+  height="400"
+  frameborder="0"
+></iframe>  
+The bar graph above, shows the average time taken for recipes to be made versus the rating recieved. We can see that the average time taken to produce a recipe with rating 1 alomost takes the same amount of time as producing a recipe with rating 5, with the difference between the two being only 6.9 minutes. What's interesting is that 87.4 minutes to create a recipe with rating 3 and 91.5  to create a recipe with rating 4. 
+
+### Interesting Aggregates
+Some interesting aggregates we found were when we 
+
+
+## Assessment of Missingness
+In our merged dataframe, there were missing values in'rating', 'date' and 'review'. Of these 3 columns, 'rating' is the most relevant for our project, hence we will analyze the missingness of rating. 
+### NMAR Analysis
+We believe that the missingness'review' is 
+
+### Missingness Dependancy
