@@ -43,7 +43,6 @@ Please scroll down and to the right to see all of the columns and rows<br>
   frameborder="0"
   style="width: 100%; height: 100%; min-width: 1200px; min-height: 600px;"  
 ></iframe>
-<br>
 
 ### Univariate Analysis
 For our univariate analysis, we examined the overall distribution of the ratings of recipes in our dataframe and the distribution for the number of steps of all recipes. This would show us the overall trend in the satisfaction of the users and the number of steps taken to make the recipes, helping us further analyze the data in our bivariate analysis and hypothesis testing. 
@@ -85,16 +84,16 @@ For this section, we grouped our data based on the number of steps and found the
 <iframe
   src="assets/interesting_agg_tail.html"
   width="1200" 
-  height="300"  
+  height="200"  
   frameborder="0"
-  style="width: 100%; height: 100%; min-width: 1000px; min-height: 300px;"  
+  style="width: 100%; height: 100%; min-width: 1000px; min-height: 350px;"  
 ></iframe>
 <iframe
   src="assets/interesting_agg_tail.html"
   width="1200" 
-  height="300"  
+  height="200"  
   frameborder="0"
-  style="width: 100%; height: 100%; min-width: 1000px; min-height: 300px;"  
+  style="width: 100%; height: 100%; min-width: 1000px; min-height: 350px;"  
 ></iframe>
 <br>
 
