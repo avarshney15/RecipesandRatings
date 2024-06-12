@@ -7,7 +7,7 @@ As college students, we barely have time during the day to cook fresh meals that
 The recipes dataset has 83782 rows with the following 10 columns:<br>
 <iframe
   src="assets/recipes-table.html"
-  width="800"
+  width="600"
   height="600"
   frameborder="0"
 ></iframe>
