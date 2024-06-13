@@ -80,7 +80,7 @@ The scatterplot above, shows the distribution of the number of steps taken, brok
 The bar graph above, shows the average time taken for recipes to be made versus the rating recieved. We can see that the average time taken to produce a recipe with rating 1 alomost takes the same amount of time as producing a recipe with rating 5, with the difference between the two being only 6.9 minutes. What's interesting is that 87.4 minutes to create a recipe with rating 3 and 91.5  to create a recipe with rating 4. 
 
 ### Interesting Aggregates
-For this section, we grouped our data based on the number of steps and found the mean, median, 
+For this section, we grouped our data to find the relationship between the number of steps and the average rating by calculating the mean, median, standard deviation, minimum value and maximum value. We have the head and the tail for our resutling  dataframe below:
 <iframe
   src="assets/interesting_agg_tail.html"
   width="1200" 
@@ -88,6 +88,7 @@ For this section, we grouped our data based on the number of steps and found the
   frameborder="0"
   style="width: 100%; height: 100%; min-width: 1000px; min-height: 350px;"  
 ></iframe>
+In the head, we can see that the minimum rating is 1 while the maximum and the median is 5, suggesting that even when the number of steps are generally less, there are mostly recipes with 5 star ratings. The standard deviation is also between 0.6 and 0.7 which is large as this suggests 12% to 14% variation in ratings. 
 <iframe
   src="assets/interesting_agg_tail.html"
   width="1200" 
@@ -95,10 +96,10 @@ For this section, we grouped our data based on the number of steps and found the
   frameborder="0"
   style="width: 100%; height: 100%; min-width: 1000px; min-height: 350px;"  
 ></iframe>
-<br>
+In the tail, we can see that the minimum rating is 3 only when n_steps is 88, otherwise the minimum and maximum is 5. This suggests that when the number of steps are generally more, there are mostly recipes with 5 star ratings as well. The standard deviation is also 0 for 4 of the 5 rows showing that there are only 5 star recipes when the number of steps increase.
 
 ## Assessment of Missingness
-In our merged dataframe, there were missing values in'rating', 'date' and 'review'. Of these 3 columns, 'rating' is the most relevant for our project, hence we will analyze the missingness of rating. 
+In our merged dataframe, there were missing values in 'rating', 'date' and 'review'. Of these 3 columns, 'rating' is the most relevant for our project, hence we will analyze the missingness of rating. 
 ### NMAR Analysis
 We believe that the missingness 'review' is 
 
