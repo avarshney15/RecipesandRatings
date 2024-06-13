@@ -1,4 +1,5 @@
 # Recipes and Ratings Project
+Authors: Isaiah Ton & Arjun Varshney
 ## Overview
 This is our final project for DSC 80, focussing on the relationship between the ratings and the overall difficulty of making that meal. 
 ## Introduction
@@ -243,3 +244,35 @@ We evaluated the model's performance on unseen data using a train-test split. He
 **Conclusion**:
 The performance metrics indicate that the baseline model is not performing well. The high MSE suggests that the predictions are significantly off from the actual values, and the very low R^2 score indicates that the model is not effectively explaining the variance in the target variable (minutes).
 This result suggests that the number of steps and the rating alone are insufficient to predict the time required to prepare a recipe accurately. It is likely that other factors, such as the complexity of the steps, the type of cuisine, or specific ingredients, play a more significant role in determining the preparation time.
+
+## Final Model
+The features we used in our final model are:-
+1. n_steps - The column represents the number of steps in the recipe. We chose this feature because it directly indicates the complexity of a recipe. Simpler recipes with fewer steps might be easier and quicker to make, potentially influencing their overall preparation time. To ensure that the feature contributes appropriately to the model, we scaled n_steps using StandardScaler, which helps in standardizing the feature's range.
+2. rating - The column contains the user rating for the recipe. By analyzing the relationship between rating and minutes, we found that recipes with higher ratings take slightly more time, as highly rated recipes are likely to have a lot of steps and be more complicated. We scaled the rating feature using StandardScaler to maintain comparability with other features.
+3. calories - we chose calories as logically we thought that recipes with higher calories would take longer to make. To transform the calories feature, we applied a log transformation using FunctionTransformer followed by scaling with StandardScaler. This transformation helps in normalizing the data and reducing the impact of outliers.
+4. n_ingredients - The column represents the number of ingredients used in the recipe. Recipes with more ingredients are likely to take longer to prepare due to the additional steps involved in handling each ingredient. We also applied a log transformation to n_ingredients using FunctionTransformer followed by scaling with StandardScaler. This approach helps in normalizing the distribution and mitigating the influence of outliers.
+<br>
+
+**Modeling Algorithm**:- We used a Random Forest Regressor as our modeling algorithm. Random Forests are robust to overfitting and can handle complex interactions between features effectively. We conducted hyperparameter tuning using GridSearchCV to find the best combination of hyperparameters, including max_depth, n_estimators, and min_samples_split.
+
+<br> 
+
+**Hyperparameter Tuning**
+The hyperparameters we tuned were:
+1. n_estimators: The number of trees in the forest.
+2. max_depth: The maximum depth of the tree.
+3. min_samples_split: The minimum number of samples required to split an internal node.
+<br>
+
+The best combination of hyperparameters found was:
+1. n_estimators: 250
+2. max_depth: 25
+3. min_samples_split: 2
+<br>
+
+We evaluated the model's performance on unseen data using a train-test split. Here are the results:
+ - Mean Squared Error (MSE): 525938.216312677
+ - R² Score: 0.20105448630904144
+<br>
+ Compared to our baseline model, the R² Score increased from 0.002430478288256044 to 0.20105448630904144, which is almost 100 times better and our MSE decreased from 
+
