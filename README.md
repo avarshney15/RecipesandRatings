@@ -161,7 +161,8 @@ Observed Difference in Mean Ratings: 0.03417508887158416
 The extremely low p-value (0.0) strongly indicates that the observed difference in mean ratings is not due to random chance. This provides robust evidence that preparation time significantly influences recipe ratings, validating our alternative hypothesis.
 
 ## Framing a Prediction Problem
-For our prediction problem, we want to predict the time taken to make a recipe. This prediction problem is a regression task, where the goal is to predict a continuous numerical value representing the time (in minutes) required to prepare a recipe.<br>
+For our prediction problem, we want to predict the time taken to make a recipe. This prediction problem is a regression task, where the goal is to predict a continuous numerical value representing the time (in minutes) required to prepare a recipe.
+<br>
 **Prediction Problem**: Predict the time taken to make a recipe.
 
 **Type of Problem**: Regression
@@ -171,10 +172,13 @@ For our prediction problem, we want to predict the time taken to make a recipe. 
 **Justification for Choosing the Response Variable**:The time required to prepare a recipe is a critical piece of information for college students especially	during final week. Knowing how long a recipe will take can help users plan their meals more effectively and choose recipes that fit their available time. Additionally, recipe creators and websites can use this information to categorize and recommend recipes based on the user's time constraints.<br>
 
 
-**Evaluation Metric**: For evaluating our regression model, we will use the Mean Squared Error (MSE) and the R-squared (R²) score.
+**Test Statistic**: For evaluating our regression model, we will use the Mean Squared Error (MSE) and the R-squared (R²) score.
 <br>
 Mean Squared Error (MSE): MSE measures the average squared difference between the actual and predicted values. It is a commonly used metric for regression problems as it gives a sense of how far the predicted values are from the actual values. Lower MSE values indicate better model performance.
 <br>
-R-squared (R²) Score: The R² score, also known as the coefficient of determination, indicates the proportion of the variance in the dependent variable that is predictable from the independent variables. An R² score closer to 1 implies that the model explains a large portion of the variance in the response variable.
+R-squared (R²) Score: The R² score, also known as the coefficient of determination, indicates the is the proportion of variance in  
+y that the linear model explains. An R² score closer to 1 implies that the model explains a large portion of the variance in the response variable. Having a high R² score would mean that our features do a good job of predicting the minutes. 
 <br>
-We chose MSE because it provides a clear measure of the average error in the predictions, penalizing larger errors more significantly. The R² score is chosen to provide an understanding of how well the model explains the variability in the response variable.
+We chose MSE because it provides a clear measure of the average error in the predictions, penalizing larger errors more significantly, forcing our model to be really accurate as our dataframe has over 230,000 rows and the prediction must be close for all rows to reduce the MSE. The R² score is chosen to provide an understanding of how well the model explains the variability in the response variable.
+<br>
+We will use the features and dataframe described in the Data Cleaning section and will divide the dataset into a train test split to ensure fair evaluation of our Baseline and Final model. 
