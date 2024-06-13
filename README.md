@@ -109,9 +109,9 @@ We will now run a permutation test to analyze whether the missingness of the 'ra
 
 **Null Hypothesis**: The missingness of ratings does not depend on the number of steps required to make the recipe.
 
-**Alternate Hypothesis**: The missingness of ratings does depend on the number of ingredients required to make the recipe.
+**Alternate Hypothesis**: The missingness of ratings does depend on the number of steps required to make the recipe.
 
-**Test Statistic**: The difference of mean in the number of steps of the distribution of the group with missing ratings and the distribution of the group without missing ratings.
+**Test Statistic**: The difference in mean in the number of steps of the distribution of the group with missing ratings and the distribution of the group without missing ratings.
 <br>
 We will run a permutation test over a 1000 iterations where we will shuffle the 'rating_missing' column we have temporarily added and compare our test statistic with our observed value of 1.3386412335909217. 
 Significance Level: 0.05
@@ -122,8 +122,27 @@ Significance Level: 0.05
   frameborder="0"
   style="width: 100%; height: 100%; min-width: 700px; min-height: 450px;"  
 ></iframe>
-Based on the p-value calculated 0.0, we have to reject the null hypothesis as the values of   
+Based on the p-value calculated 0.0, we have to reject the null hypothesis proving that the values of missingness of ratings does depend on the number of steps 
 
+#### Impact of Minutes on Missingness of Rating
+We will now run a permutation test to analyze whether the missingness of the 'rating' column depends on 'minutes' which is the total number of minutes taken to make the recipe. 
+
+**Null Hypothesis**: The missingness of ratings does not depend on the number of minutes required to make the recipe.
+
+**Alternate Hypothesis**: The missingness of ratings does depend on the number of minutes required to make the recipe.
+
+**Test Statistic**: The difference in mean in the number of minutes of the distribution of the group with missing ratings and the distribution of the group without missing ratings.
+<br>
+We will run a permutation test over a 1000 iterations where we will shuffle the 'rating_missing' column we have temporarily added and compare our test statistic with our observed value of 51.45237039852127. 
+Significance Level: 0.05
+<iframe
+  src="assets/missingness2.html"
+  width="700" 
+  height="450"  
+  frameborder="0"
+  style="width: 100%; height: 100%; min-width: 700px; min-height: 450px;"  
+></iframe>
+Based on the p-value calculated 0.107, we fail to reject the null hypothesis and connot prove that the values of missingness of ratings does depend on the minutes taken to make the recipe. 
 
 ## Hypothesis Testing
 ### Rating vs Minutes
