@@ -216,8 +216,9 @@ For our baseline model, we trained a linear regression model to predict the time
 
 **Features**:
 We used two features:
-n_steps: The number of steps in the recipe (quantitative).
-rating: The user rating for the recipe (quantitative).
+1. n_steps: The number of steps in the recipe (quantitative).
+2. rating: The user rating for the recipe (quantitative).
+
 Target:
 The target variable we are predicting is minutes (quantitative).
 <br>
@@ -235,8 +236,8 @@ We implemented all the data preprocessing steps and model training within a sing
 
 **Model Performance**:
 We evaluated the model's performance on unseen data using a train-test split. Here are the results:
-Mean Squared Error (MSE): 656690.5075580779
-R^2 Score: 0.002430478288256044
+- Mean Squared Error (MSE): 656690.5075580779
+- R^2 Score: 0.002430478288256044
 <br>
 
 **Conclusion**:
