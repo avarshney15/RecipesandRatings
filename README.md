@@ -114,7 +114,9 @@ We will now run a permutation test to analyze whether the missingness of the 'ra
 **Test Statistic**: The difference in mean in the number of steps of the distribution of the group with missing ratings and the distribution of the group without missing ratings.
 <br>
 We will run a permutation test over a 1000 iterations where we will shuffle the 'rating_missing' column we have temporarily added and compare our test statistic with our observed value of 1.3386412335909217. 
-Significance Level: 0.05
+<br>
+
+**Significance Level**: 0.05
 <iframe
   src="assets/missingness1.html"
   width="700" 
@@ -122,7 +124,7 @@ Significance Level: 0.05
   frameborder="0"
   style="width: 100%; height: 100%; min-width: 700px; min-height: 450px;"  
 ></iframe>
-Based on the p-value calculated 0.0, we have to reject the null hypothesis proving that the values of missingness of ratings does depend on the number of steps 
+Based on the p-value calculated 0.0, we have to reject the null hypothesis proving that the values of missingness of ratings does depend on the number of steps.
 
 #### Impact of Minutes on Missingness of Rating
 We will now run a permutation test to analyze whether the missingness of the 'rating' column depends on 'minutes' which is the total number of minutes taken to make the recipe. 
@@ -134,7 +136,9 @@ We will now run a permutation test to analyze whether the missingness of the 'ra
 **Test Statistic**: The difference in mean in the number of minutes of the distribution of the group with missing ratings and the distribution of the group without missing ratings.
 <br>
 We will run a permutation test over a 1000 iterations where we will shuffle the 'rating_missing' column we have temporarily added and compare our test statistic with our observed value of 51.45237039852127. 
-Significance Level: 0.05
+<br>
+
+**Significance Level**: 0.05
 <iframe
   src="assets/missingness2.html"
   width="700" 
@@ -205,3 +209,5 @@ y that the linear model explains. An R² score closer to 1 implies that the mode
 We chose MSE because it provides a clear measure of the average error in the predictions, penalizing larger errors more significantly, forcing our model to be really accurate as our dataframe has over 230,000 rows and the prediction must be close for all rows to reduce the MSE. The R² score is chosen to provide an understanding of how well the model explains the variability in the response variable.
 <br>
 We will use the features and dataframe described in the Data Cleaning section and will divide the dataset into a train test split to ensure fair evaluation of our Baseline and Final model. 
+
+## Baseline Model
