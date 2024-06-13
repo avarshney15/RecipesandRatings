@@ -123,3 +123,34 @@ Significance Level: 0.05
   frameborder="0"
   style="width: 100%; height: 100%; min-width: 1000px; min-height: 350px;"  
 ></iframe>
+
+
+
+## Hypothesis Testing
+### Rating vs Minutes
+In this step, we conducted a hypothesis test to determine whether people rate recipes that take less time higher than recipes that take more time. We used the difference in mean ratings between the two groups (recipes taking less time and recipes taking more time) as our test statistic.
+
+Hypotheses:
+
+**Null Hypothesis**: People rate all recipes on the same scale. Any observed difference in ratings between recipes that take less time and those that take more time is due to random chance.
+**Alternative Hypothesis**: People rate recipes that take less time higher than recipes that take more time.
+**Justification for Choice of Hypotheses**:
+These hypotheses are directly aligned with our research question, which seeks to understand if the time taken to prepare a recipe influences its rating. By testing whether there is a significant difference in ratings based on preparation time, we can draw conclusions about user preferences related to the convenience and effort required for different recipes.
+
+**Test Statistic**: We used the difference in mean ratings as our test statistic to measure the observed difference between recipes taking less time and recipes taking more time.
+
+**Justification for Choice of Test Statistic**:
+The mean rating is a straightforward and interpretable metric that directly reflects user satisfaction and perception of the recipes. Using the difference in mean ratings allows us to quantify the impact of preparation time on user ratings, providing clear and actionable insights.
+<iframe
+  src="assets/step4.html"
+  width="1200" 
+  height="200"  
+  frameborder="0"
+  style="width: 100%; height: 100%; min-width: 1000px; min-height: 350px;"  
+></iframe>
+
+**Results**:
+Observed Difference in Mean Ratings: 0.03417508887158416
+**P-value**: 0.0
+**Conclusion**:Based on the p-value of 0.0, we reject the null hypothesis. This indicates that there is a significant difference in ratings between recipes that take less time and those that take more time. Specifically, the results suggest that people tend to rate recipes that take less time higher than those that take more time.
+The extremely low p-value (0.0) strongly indicates that the observed difference in mean ratings is not due to random chance. This provides robust evidence that preparation time significantly influences recipe ratings, validating our alternative hypothesis.
