@@ -276,31 +276,14 @@ We evaluated the model's performance on unseen data using a train-test split. He
 <br>
  Compared to our baseline model, the R² Score increased from 0.002430478288256044 to 0.20105448630904144, which is almost 100 times better and our MSE decreased from 656690.5075580779 to 525938.216312677 which is a decrease of roughly 130752. The lower MSE and higher R² Score show that our final model performs better predictions than our baseline model. 
 
- ## Fairness Analysis
-
+## Fairness Analysis
 To ensure that our final model provides fair predictions, we conducted a fairness analysis to evaluate if the model's performance differs between recipes with a high number of ingredients and recipes with a low number of ingredients.
+We divided the dataset into two groups based on the number of ingredients. We used the median to classify rows into Group X and Group Y, where Group X has recipes with more than the median number of ingredients and Group Y has recipes with less than or equal to the median number of ingredients. We used the Root Mean Squared Error (RMSE) to measure the prediction error.
+<br>
 
-Groups:
-
-Group X: Recipes with a high number of ingredients (more than the median number of ingredients).
-Group Y: Recipes with a low number of ingredients (less than or equal to the median number of ingredients).
-Evaluation Metric:
-
-We used the Root Mean Squared Error (RMSE) to measure the prediction error.
-
-Hypotheses:
-
-Null Hypothesis: The RMSE for recipes with a high number of ingredients and recipes with a low number of ingredients are roughly the same, and any differences are due to random chance.
-Alternative Hypothesis: The RMSE for recipes with a high number of ingredients is different from the RMSE for recipes with a low number of ingredients.
-Results:
-
-Observed Difference in RMSE: 683.1049043557724
-P-value: 0.0
-Conclusion:
-
-The p-value of 0.0 indicates that the observed difference in RMSE is statistically significant. Therefore, we reject the null hypothesis, suggesting that the model's performance differs significantly between recipes with a high number of ingredients and those with a low number of ingredients.
-
-Visualization:
+**Null Hypothesis**: The RMSE for recipes with a high number of ingredients and recipes with a low number of ingredients are roughly the same, and any differences are due to random chance.
+**Alternative Hypothesis**: The RMSE for recipes with a high number of ingredients is different from the RMSE for recipes with a low number of ingredients.
+**Significance Level**: 0.05
 
 The histogram below shows the distribution of permutation differences in RMSE, with the observed difference marked by a red dashed line.
 <iframe
@@ -311,5 +294,10 @@ The histogram below shows the distribution of permutation differences in RMSE, w
   style="width: 100%; height: 100%; min-width: 700px; min-height: 450px;"  
 ></iframe>
 
+**Results**:
+Observed Difference in RMSE: 683.1049043557724
+P-value: 0.0
+The p-value of 0.0 indicates that the observed difference in RMSE is statistically significant. Therefore, we reject the null hypothesis, suggesting that the model's performance differs significantly between recipes with a high number of ingredients and those with a low number of ingredients.
+<br>
 By conducting this fairness analysis, we have demonstrated that our model's performance is not consistent across different groups, indicating potential bias in the model's predictions. This is an important finding, as it highlights the need to further investigate and address the sources of bias in the model to ensure fair and reliable predictions for all users.
 
