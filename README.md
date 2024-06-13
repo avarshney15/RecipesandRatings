@@ -211,3 +211,34 @@ We chose MSE because it provides a clear measure of the average error in the pre
 We will use the features and dataframe described in the Data Cleaning section and will divide the dataset into a train test split to ensure fair evaluation of our Baseline and Final model. 
 
 ## Baseline Model
+For our baseline model, we trained a linear regression model to predict the time required to prepare a recipe (minutes) using the number of steps and rating as features. The steps involved in creating this model are as follows:
+<br>
+
+**Features**:
+We used two features:
+n_steps: The number of steps in the recipe (quantitative).
+rating: The user rating for the recipe (quantitative).
+Target:
+The target variable we are predicting is minutes (quantitative).
+<br>
+
+**Data Preparation**:
+We handled missing values by dropping rows with missing values in the selected columns.
+We scaled the numerical features using standard scaling.
+<br>
+
+**Model**:
+We used a linear regression model.
+Pipeline Implementation:
+We implemented all the data preprocessing steps and model training within a single sklearn pipeline to ensure a streamlined and reproducible workflow. This pipeline included scaling the features and training the linear regression model.
+<br>
+
+**Model Performance**:
+We evaluated the model's performance on unseen data using a train-test split. Here are the results:
+Mean Squared Error (MSE): 656690.5075580779
+R^2 Score: 0.002430478288256044
+<br>
+
+**Conclusion**:
+The performance metrics indicate that the baseline model is not performing well. The high MSE suggests that the predictions are significantly off from the actual values, and the very low R^2 score indicates that the model is not effectively explaining the variance in the target variable (minutes).
+This result suggests that the number of steps and the rating alone are insufficient to predict the time required to prepare a recipe accurately. It is likely that other factors, such as the complexity of the steps, the type of cuisine, or specific ingredients, play a more significant role in determining the preparation time.
