@@ -27,10 +27,10 @@ Based on these two datasets we will investigate the relationship between the dif
 ### Data Cleaning
 We took the following steps to clean and merge the recipes and interactions datasets:- <br>
 1. We removed any duplicated to avoid any biases or any errors in future hypothesis and permutation testing and predictive models
-2. Next, to not skew statistics such as the average time taken for a dish or the average number of steps we have removed recipes with more than 100 steps and recipes that takes more than a 1000 intues to pepare
+2. Next, to not skew statistics such as the average time taken for a dish or the average number of steps we have removed recipes with more than 100 steps and recipes that takes more than a 1000 minutes to prepare
 3. Then we renamed the 'id' column in recipes to to 'recipes_id' and did a left merge on recipes, and interactions, giving us a dataframe with 234429 rows
 4. On this merged dataframe, we substituted the 0s in the rating column with np.nan as the rating is from 1 to 5, indicating that 0 stands for missing values and we do not want these values to skew the average rating of a recipe
-5. Then we computed the average rating per recipe and added it as a column in our merged dataframe. We kept both rating and average rating as there are 15036 rows with np.nan in the rating column, which is roughly 6.4% of our dataframe.Keeping both columns allows us to compare future statistical analysis with and without mean imputation. 
+5. Then we computed the average rating per recipe and added it as a column in our merged dataframe. We kept both rating and average rating as there are 15036 rows with np.nan in the rating column, which is roughly 6.4% of our dataframe. Keeping both columns allows us to compare future statistical analysis with and without mean imputation. 
 6. Then we parsed the nutrition column into individual values, added each value into our dataframe. These values were originally stored as a string which was a list, so had to call the str object, strip the parentheses, split the string, add them to our dataframe and then convert them to float.
 7.  We also categorized each recipe into 'Easy', 'Medium' or 'Hard' based on the number of steps required and the overall time taken to make that recipe. 
 8.  We also added another column 'avg_time_per_step' which divides the total number of minutes to the number of steps as there might be some recipes that have few steps, making it seem like they are easy to make but may take a lot of time. <br>
@@ -147,7 +147,7 @@ We will run a permutation test over a 1000 iterations where we will shuffle the 
   frameborder="0"
   style="width: 100%; height: 100%; min-width: 700px; min-height: 450px;"  
 ></iframe>
-Based on the p-value calculated 0.107, we fail to reject the null hypothesis and connot prove that the values of missingness of ratings does depend on the minutes taken to make the recipe. 
+Based on the p-value calculated 0.107, we fail to reject the null hypothesis and cannot prove that the values of missingness of ratings depends on the minutes taken to make the recipe. 
 
 ## Hypothesis Testing
 ### Rating vs Minutes
@@ -204,8 +204,7 @@ For our prediction problem, we want to predict the time taken to make a recipe. 
 **Mean Squared Error (MSE)**: MSE measures the average squared difference between the actual and predicted values. It is a commonly used metric for regression problems as it gives a sense of how far the predicted values are from the actual values. Lower MSE values indicate better model performance.
 <br>
 
-**R-squared (R²) Score**: The R² score, also known as the coefficient of determination, indicates the is the proportion of variance in  
-y that the linear model explains. An R² score closer to 1 implies that the model explains a large portion of the variance in the response variable. Having a high R² score would mean that our features do a good job of predicting the minutes. 
+**R-squared (R²) Score**: The R² score, also known as the coefficient of determination, indicates the is the proportion of variance in y that the linear model explains. An R² score closer to 1 implies that the model explains a large portion of the variance in the response variable. Having a high R² score would mean that our features do a good job of predicting the minutes. 
 <br>
 We chose MSE because it provides a clear measure of the average error in the predictions, penalizing larger errors more significantly, forcing our model to be really accurate as our dataframe has over 230,000 rows and the prediction must be close for all rows to reduce the MSE. The R² score is chosen to provide an understanding of how well the model explains the variability in the response variable.
 <br>
@@ -255,7 +254,6 @@ The features we used in our final model are:-
 
 **Modeling Algorithm**:- We used a Random Forest Regressor as our modeling algorithm. Random Forests are robust to overfitting and can handle complex interactions between features effectively. We conducted hyperparameter tuning using GridSearchCV to find the best combination of hyperparameters, including max_depth, n_estimators, and min_samples_split.
 
-<br> 
 
 **Hyperparameter Tuning**
 The hyperparameters we tuned were:
@@ -274,7 +272,7 @@ We evaluated the model's performance on unseen data using a train-test split. He
  - Mean Squared Error (MSE): 525938.216312677
  - R² Score: 0.20105448630904144
 <br>
- Compared to our baseline model, the R² Score increased from 0.002430478288256044 to 0.20105448630904144, which is almost 100 times better and our MSE decreased from 656690.5075580779 to 525938.216312677 which is a decrease of roughly 130752. The lower MSE and higher R² Score show that our final model performs better predictions than our baseline model. 
+Compared to our baseline model, the R² Score increased from 0.002430478288256044 to 0.20105448630904144, which is almost 100 times better and our MSE decreased from 656690.5075580779 to 525938.216312677 which is a decrease of roughly 130752. The lower MSE and higher R² Score show that our final model performs better predictions than our baseline model. 
 
 ## Fairness Analysis
 To ensure that our final model provides fair predictions, we conducted a fairness analysis to evaluate if the model's performance differs between recipes with a high number of ingredients and recipes with a low number of ingredients.
