@@ -101,6 +101,25 @@ In the tail, we can see that the minimum rating is 3 only when n_steps is 88, ot
 ## Assessment of Missingness
 In our merged dataframe, there were missing values in 'rating', 'date' and 'review'. Of these 3 columns, 'rating' is the most relevant for our project, hence we will analyze the missingness of rating. 
 ### NMAR Analysis
-We believe that the missingness 'review' is 
+We believe that the missingness 'review' is NMAR as it takes a lot of time and effort to write a review as opposed to just leaving a rating. Users would be more likely to leave a review if they really liked or really hated a particular recipe. 
 
 ### Missingness Dependancy
+We will now run a permutation test to analyze whether the missingness of the 'rating' column depends on 'n_ingredients' which is theo total number of ingredients required to make the recipe. 
+
+
+We moved on to examine the missingness of 'rating' in the merged DataFrame by testing the dependency of its missingness. We are investigating whether the missiness in the 'rating' column depends on the column 'prop_sugar', which is the proportion of sugar out of the total calories, or the column 'n_steps', which is the number of steps of the recipe.
+
+Null Hypothesis: The missingness of ratings does not depend on the number of steps required to make the recipe.
+
+Alternate Hypothesis: The missingness of ratings does depend on the number of ingredients required to make the recipe.
+
+Test Statistic: The difference of mean in the number of steps of the distribution of the group with missing ratings and the distribution of the group without missing ratings.
+
+Significance Level: 0.05
+<iframe
+  src="assets/missingness1.html"
+  width="1200" 
+  height="200"  
+  frameborder="0"
+  style="width: 100%; height: 100%; min-width: 1000px; min-height: 350px;"  
+></iframe>
