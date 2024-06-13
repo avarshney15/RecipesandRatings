@@ -104,26 +104,25 @@ In our merged dataframe, there were missing values in 'rating', 'date' and 'revi
 We believe that the missingness 'review' is NMAR as it takes a lot of time and effort to write a review as opposed to just leaving a rating. Users would be more likely to leave a review if they really liked or really hated a particular recipe. 
 
 ### Missingness Dependancy
-We will now run a permutation test to analyze whether the missingness of the 'rating' column depends on 'n_ingredients' which is theo total number of ingredients required to make the recipe. 
+#### Impact of n_steps on Missingness of Rating
+We will now run a permutation test to analyze whether the missingness of the 'rating' column depends on 'n_steps' which is the total number of ingredients required to make the recipe. 
 
+**Null Hypothesis**: The missingness of ratings does not depend on the number of steps required to make the recipe.
 
-We moved on to examine the missingness of 'rating' in the merged DataFrame by testing the dependency of its missingness. We are investigating whether the missiness in the 'rating' column depends on the column 'prop_sugar', which is the proportion of sugar out of the total calories, or the column 'n_steps', which is the number of steps of the recipe.
+**Alternate Hypothesis**: The missingness of ratings does depend on the number of ingredients required to make the recipe.
 
-Null Hypothesis: The missingness of ratings does not depend on the number of steps required to make the recipe.
-
-Alternate Hypothesis: The missingness of ratings does depend on the number of ingredients required to make the recipe.
-
-Test Statistic: The difference of mean in the number of steps of the distribution of the group with missing ratings and the distribution of the group without missing ratings.
-
+**Test Statistic**: The difference of mean in the number of steps of the distribution of the group with missing ratings and the distribution of the group without missing ratings.
+<br>
+We will run a permutation test over a 1000 iterations where we will shuffle the 'rating_missing' column we have temporarily added and compare our test statistic with our observed value of 1.3386412335909217. 
 Significance Level: 0.05
 <iframe
   src="assets/missingness1.html"
   width="700" 
-  height="400"  
+  height="450"  
   frameborder="0"
-  style="width: 100%; height: 100%; min-width: 700px; min-height: 40px;"  
+  style="width: 100%; height: 100%; min-width: 700px; min-height: 450px;"  
 ></iframe>
-
+Based on the p-value calculated 0.0, we have to reject the null hypothesis as the values of   
 
 
 ## Hypothesis Testing
@@ -145,10 +144,10 @@ These hypotheses are directly aligned with our research question, which seeks to
 The mean rating is a straightforward and interpretable metric that directly reflects user satisfaction and perception of the recipes. Using the difference in mean ratings allows us to quantify the impact of preparation time on user ratings, providing clear and actionable insights.
 <iframe
   src="assets/step4.html"
-  width="1200" 
-  height="200"  
+  width="700" 
+  height="450"  
   frameborder="0"
-  style="width: 100%; height: 100%; min-width: 1000px; min-height: 350px;"  
+  style="width: 100%; height: 100%; min-width: 700; min-height: 450px;"  
 ></iframe>
 
 **Results**:
@@ -160,3 +159,22 @@ Observed Difference in Mean Ratings: 0.03417508887158416
 
 **Conclusion**:Based on the p-value of 0.0, we reject the null hypothesis. This indicates that there is a significant difference in ratings between recipes that take less time and those that take more time. Specifically, the results suggest that people tend to rate recipes that take less time higher than those that take more time.
 The extremely low p-value (0.0) strongly indicates that the observed difference in mean ratings is not due to random chance. This provides robust evidence that preparation time significantly influences recipe ratings, validating our alternative hypothesis.
+
+## Framing a Prediction Problem
+For our prediction problem, we want to predict the time taken to make a recipe. This prediction problem is a regression task, where the goal is to predict a continuous numerical value representing the time (in minutes) required to prepare a recipe.<br>
+**Prediction Problem**: Predict the time taken to make a recipe.
+
+**Type of Problem**: Regression
+
+**Response Variable**: The response variable is minutes, which represents the time taken to make a recipe.
+
+**Justification for Choosing the Response Variable**:The time required to prepare a recipe is a critical piece of information for college students especially	during final week. Knowing how long a recipe will take can help users plan their meals more effectively and choose recipes that fit their available time. Additionally, recipe creators and websites can use this information to categorize and recommend recipes based on the user's time constraints.<br>
+
+
+**Evaluation Metric**: For evaluating our regression model, we will use the Mean Squared Error (MSE) and the R-squared (R²) score.
+<br>
+Mean Squared Error (MSE): MSE measures the average squared difference between the actual and predicted values. It is a commonly used metric for regression problems as it gives a sense of how far the predicted values are from the actual values. Lower MSE values indicate better model performance.
+<br>
+R-squared (R²) Score: The R² score, also known as the coefficient of determination, indicates the proportion of the variance in the dependent variable that is predictable from the independent variables. An R² score closer to 1 implies that the model explains a large portion of the variance in the response variable.
+<br>
+We chose MSE because it provides a clear measure of the average error in the predictions, penalizing larger errors more significantly. The R² score is chosen to provide an understanding of how well the model explains the variability in the response variable.
